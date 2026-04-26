@@ -1,0 +1,48 @@
+.logo {
+    width: 100px;
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    background-color: peachpuff;
+}
+
+.navi {
+    justify-content: right;
+}
+
+.navi > ul {
+    display:flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navi > ul > li {
+    padding: 10px;
+    margin: 10px;
+    color: red;
+}
+.restaurant:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin: 10px;
+}
+.restaurant {
+    cursor: pointer;
+    padding: 5px;;
+    width: 159px;
+}
+
+.food_logo {
+    width:200px;
+    height:150px;
+}
+
+.search {
+    padding: 10px;
+}
+
+.res-cont {
+    display:flex;
+    flex-wrap: wrap;
+}

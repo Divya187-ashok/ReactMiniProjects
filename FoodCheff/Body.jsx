@@ -1,0 +1,126 @@
+
+import Restaurant from "./Restaurant";
+
+const resList = [
+    {
+    "id": 1,
+    "name": "Spice Junction",
+    "rating": 4.3,
+    "deliveryTime": "30 mins",
+    "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=500"
+  },
+  {
+    "id": 2,
+    "name": "Urban Bites",
+    "rating": 4.1,
+    "deliveryTime": "25 mins",
+    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=500"
+  },
+  {
+    "id": 3,
+    "name": "Curry Kingdom",
+    "rating": 4.5,
+    "deliveryTime": "35 mins",
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500"
+  },
+  {
+    "id": 4,
+    "name": "Burger Hub",
+    "rating": 4.0,
+    "deliveryTime": "20 mins",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500"
+  },
+  {
+    "id": 5,
+    "name": "Pizza Point",
+    "rating": 4.2,
+    "deliveryTime": "28 mins",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500"
+  },
+  {
+    "id": 6,
+    "name": "Masala Magic",
+    "rating": 4.4,
+    "deliveryTime": "32 mins",
+    "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?w=500"
+  },
+  {
+    "id": 7,
+    "name": "Biryani House",
+    "rating": 4.6,
+    "deliveryTime": "40 mins",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500"
+  },
+  {
+    "id": 8,
+    "name": "Snack Street",
+    "rating": 3.9,
+    "deliveryTime": "22 mins",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500"
+  },
+  {
+    "id": 9,
+    "name": "The Hungry Fork",
+    "rating": 4.3,
+    "deliveryTime": "27 mins",
+    "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500"
+  },
+  {
+    "id": 10,
+    "name": "Cafe Bliss",
+    "rating": 4.2,
+    "deliveryTime": "24 mins",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500"
+  },
+  {
+    "id": 11,
+    "name": "Royal Tandoor",
+    "rating": 4.5,
+    "deliveryTime": "36 mins",
+    "image": "https://images.unsplash.com/photo-1600628422019-6a1f8f2bdb4d?w=500"
+  },
+  {
+    "id": 12,
+    "name": "Food Garage",
+    "rating": 4.0,
+    "deliveryTime": "26 mins",
+    "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500"
+  },
+  {
+    "id": 13,
+    "name": "Desi Delight",
+    "rating": 4.3,
+    "deliveryTime": "31 mins",
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500"
+  },
+  {
+    "id": 14,
+    "name": "The Chill Cup",
+    "rating": 4.1,
+    "deliveryTime": "23 mins",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+  },
+  {
+    "id": 15,
+    "name": "Golden Spoon",
+    "rating": 4.6,
+    "deliveryTime": "38 mins",
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=500"
+  }
+]
+
+
+const Body = () => (
+    <div className="body">
+        <div className="search">Search</div>
+        <div className="res-cont">
+        {
+            resList.map((res) => (
+                <Restaurant key={res.id} resData={res} />
+            ))
+        }
+        </div>
+    </div>
+)
+
+export default Body;
