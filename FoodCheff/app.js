@@ -1,7 +1,11 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
+import About from "./About";
+import Contact from "./Contact";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+
 /**
  * These are the things we are going to have in our project.
  * header
@@ -18,27 +22,42 @@ import Body from "./Body";
  *  -contact
  */
 
-
-
-
-
-const Restaurant = ({resData}) => (
-    <div className="restaurant" style={{backgroundColor:"#f0f0f0"}}>
-        <img className="food_logo" src={resData.image}/>
-        <h3>{resData.name}</h3>
-        <h4>{resData.rating}⭐</h4>
-        <h5>{resData.deliveryTime}🕒</h5>
-    </div>
-)
-
-
+const Restaurant = ({ resData }) => (
+  <div className="restaurant" style={{ backgroundColor: "#f0f0f0" }}>
+    <img className="food_logo" src={resData.image} />
+    <h3>{resData.name}</h3>
+    <h4>{resData.rating}⭐</h4>
+    <h5>{resData.deliveryTime}🕒</h5>
+  </div>
+);
 
 const Appcontainer = () => (
-    <div className="app">
-        <Header/>
-        <Body/>
-    </div>
-)
+  <div className="app">
+    <Header />
+    <Outlet />
+  </div>
+);
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Appcontainer />,
+    children: [
+        {
+            path: "/",
+            element: <Body />
+        },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Appcontainer />)
+root.render(<RouterProvider router={appRouter} />);

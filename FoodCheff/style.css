@@ -29,8 +29,9 @@
 }
 .restaurant {
     cursor: pointer;
-    padding: 5px;;
-    width: 159px;
+    padding: 5px;
+    margin: 10px;
+    width: 200px;
 }
 
 .food_logo {
@@ -38,11 +39,40 @@
     height:150px;
 }
 
-.search {
-    padding: 10px;
-}
-
 .res-cont {
     display:flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-cont {
+   display : flex;
+   flex-wrap: wrap;
+}
+
+.shimmer-card {
+    width: 200px;
+    height: 300px;
+    margin : 10px;
+    background-color: #f0f0f0;
+}
+
+.login-btn {
+    margin: 10px;
+    padding: 0 10px;
+    background-color: rgb(96, 163, 96);
+}
+
+.filter-btn {
+    padding: 10px;
+    margin: 10px;
+}
+
+.SearchText {
+    margin: 5px;
+    padding: 5px;
+}
+
+.filter {
+    display: flex;
     flex-wrap: wrap;
 }
