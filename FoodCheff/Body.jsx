@@ -1,7 +1,8 @@
 
-import Restaurant from "./Restaurant";
+import Restaurant, {withPromotedLabel} from "./Restaurant";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "./useOnlineStatus";
  
 //state variable - hooks
 //2 types - useState()  and useEffect()
@@ -10,7 +11,8 @@ const Body = () => {
   const [resList, setResList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRest, setFilteredRest] = useState([])
-
+  const onlineStatus = useOnlineStatus();
+  const PromotedRestr = withPromotedLabel(Restaurant);
 useEffect(() => {fetchData()}, []);  //useEffect..
 
 const fetchData = async() => {
@@ -22,6 +24,12 @@ const fetchData = async() => {
   setResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   setFilteredRest(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 }
+
+ if(onlineStatus === false) {
+    return <h2>Oops!! You are Offline. Please try again.</h2>
+  }
+
+
 //conditional rendering...
 if(resList.length === 0) {
   return <Shimmer />

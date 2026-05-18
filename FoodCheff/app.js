@@ -1,10 +1,12 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
 import About from "./About";
 import Contact from "./Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import { ThemeProvider } from './ThemeContext';
+const Grocery = lazy(() => import("./grocery"));
 
 /**
  * These are the things we are going to have in our project.
@@ -55,9 +57,15 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/grocery",
+        element: <Grocery />
+      }
     ],
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(<ThemeProvider>
+    <RouterProvider router={appRouter} />
+  </ThemeProvider>);

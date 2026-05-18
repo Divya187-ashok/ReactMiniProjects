@@ -15,7 +15,7 @@ const Restaurant = ({ resData }) => {
   const info = resData?.info; 
 
   return (
-    <div className="restaurant" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="restaurant" style={{ backgroundColor: "var(--card-bg)"}}>
       <img
         className="food_logo"
         src={
@@ -30,6 +30,18 @@ const Restaurant = ({ resData }) => {
     </div>
   );
 };
+
+//higher order components...
+export const withPromotedLabel= (Restaurant) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute">Promoted</label>
+        <Restaurant {...props}/>
+      </div>
+    )
+  }
+}
 
 export default Restaurant;
 
